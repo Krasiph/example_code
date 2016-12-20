@@ -1,4 +1,5 @@
-client_secret.json
+*.json
 *.bin
 *.idea
+*.obj
 __pycache__

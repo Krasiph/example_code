@@ -1,0 +1,7 @@
+The library used to interact with AWS via Python is Boto 3.
+The Boto 3 quickstart guide can be found here: https://boto3.readthedocs.io/en/latest/guide/quickstart.html
+
+Here is a quick and dirty rundown of the steps needed to set up Boto 3:
+    1. pip install boto3
+    2. get the credentials from AWS IAM (Identity and Access Management)
+    3. place those credentials in a config file OR provide to the Boto 3 client/resource functions

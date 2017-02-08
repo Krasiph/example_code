@@ -19,10 +19,10 @@ def print_ec2_instances(access_key, secret_key, region):
             elif tag['Key'] == 'Status':
                 status = tag['Value']
         
-        print('Name: {0}\n\tInstance ID: {1}\n\tInstance Type: {2}\n\tStatus: {3}'.format(name,
-                                                                                          instance.id,
-                                                                                          instance.instance_type,
-                                                                                          status))
+        print('Name: {0}\n\tInstance ID: {1}\n\tInstance Type: {2}\n\tStatus: {3}\n'.format(name,
+                                                                                            instance.id,
+                                                                                            instance.instance_type,
+                                                                                            status))
 
     return
 

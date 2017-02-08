@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Example of Javascript</title>
+		<script type="text/javascript">
+			function on_even(num)
+			{
+				return num / 2;
+			}
+			
+			function on_odd(num)
+			{
+				return num * 3 + 1;
+			}
+			
+			function Collatz()
+			{
+				var nums = document.getElementById("numbers").value.split(",");
+				var i;
+				for(i=0;i<nums.length;i++) //>
+				{
+					var num = parseInt(nums[i]);
+					if(isNaN(num) || num < 0 || num != parseFloat(nums[i]))  //>
+					{
+						document.write(nums[i] + " is not a valid number.<br/>");
+					}
+					else
+					{
+						document.write(num + "<br/>");
+						while(num != 1)
+						{
+							if(num % 2 == 0)
+							{
+								num = on_even(num);
+							}
+							else
+							{
+								num = on_odd(num);
+							}
+							document.write(num + "<br/>");
+						}
+					}
+					document.write("---------------------------<br/>");
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<p>Input numbers (comma delineated) into the text field to view their Collatz path.</p>
+		<form>
+			<input type="text" name="numbers" id="numbers" />
+			<input type="button" id="button" value="Submit" />
+		</form>
+		<script type="text/javascript">
+			document.getElementById("button").onclick = Collatz;
+		</script>
+	</body>
+</html>

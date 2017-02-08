@@ -1,0 +1,7 @@
+printf
+getc
+fopen
+fgetc
+fclose
+calloc
+free

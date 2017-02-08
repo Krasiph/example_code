@@ -1,6 +1,7 @@
 import boto3
 import argparse
 
+
 def print_ec2_instances(access_key, secret_key, region):
     ec2 = boto3.resource('ec2',
                          aws_access_key_id=access_key,
@@ -19,11 +20,12 @@ def print_ec2_instances(access_key, secret_key, region):
                 status = tag['Value']
         
         print('Name: {0}\n\tInstance ID: {1}\n\tInstance Type: {2}\n\tStatus: {3}'.format(name,
-               instance.id,
-               instance.instance_type,
-               status))
+                                                                                          instance.id,
+                                                                                          instance.instance_type,
+                                                                                          status))
 
     return
+
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='Run a simple AWS API example')

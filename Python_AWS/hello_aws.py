@@ -33,13 +33,14 @@ def launch_ec2_instances(access_key, secret_key, region, how_many=1):
                          aws_secret_access_key=secret_key,
                          region_name=region)
 
-    ec2.create_instances(ImageId='ami-65b13405',
+    ec2.create_instances(ImageId='ami-f874f898', # Canada AMI
                          MinCount=1,
                          MaxCount=how_many,
                          KeyName='adcrush_farming',
                          InstanceType='t2.micro',
                          SecurityGroupIds=['sg-66ad641e'],
-                         InstanceInitiatedShutdownBehavior='stop')
+                         InstanceInitiatedShutdownBehavior='stop',
+                         SubnetId='subnet-3b3c5f5f')
 
     return
 

@@ -43,11 +43,15 @@ def chance_of_success(tn, mod=0, crit_fail=False, crit_succeed=False):
 
     if abs_tn <= 3:
         if crit_fail:
+            # Rolling a raw '3' is always a fail with crit fail rules, regardless
+            # of modifiers. Player needs to roll at least a '4'.
             return 99.54
 
         else:
             return 100.0
-
+    
+    # If the absolute TN is greater than 18, then the only way to succeed is if
+    # a player rolls '18' naturally (unless not using critical success rules)
     if abs_tn > 18:
         if crit_succeed:
             return 0.46

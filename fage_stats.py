@@ -1,4 +1,5 @@
-RAW_PROB = {
+# Probability that a 3d6 roll will be equal to a number
+PROB = {
     3: 0.46,
     4: 1.39,
     5: 2.78,
@@ -17,7 +18,8 @@ RAW_PROB = {
     18: 0.46,
 }
 
-PROB = {
+# Probability that a 3d6 roll will be greater than or equal to a number
+PROB_OF_GOE = {
     3: 100.00,
     4: 99.54,
     5: 98.15,
@@ -53,4 +55,4 @@ def chance_of_success(tn, mod=0, crit_fail=False, crit_succeed=False):
         else:
             return 0.0
 
-    return PROB[abs_tn]
+    return PROB_OF_GOE[abs_tn]

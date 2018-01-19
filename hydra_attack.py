@@ -10,7 +10,7 @@ def roll_attack():
     d2 = random.choice(D6)
     sd = random.choice(D6)
     
-    sum = d1 + d2 + sd
+    sum = d1 + d2 + sd + 5
     
     if d1 == d2 or d1 == sd or d2 == sd:
         return sum, sd
